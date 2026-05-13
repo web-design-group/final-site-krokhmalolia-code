@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина — MORE DIRT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+
+<header>
+    <div class="header-moths">
+        <div class="moth moth-1"></div>
+        <div class="moth moth-2"></div>
+        <div class="moth moth-3 moth-right"></div>
+        <div class="moth moth-4 moth-right"></div>
+    </div>
+    <div class="container">
+        <div class="header-actions-left">
+            <button class="back-btn" onclick="goBack()">
+    <i class="fas fa-arrow-left"></i>
+</button>
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Поиск...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <a href="cart.html" class="cart-link">
+                <button class="icon-btn" aria-label="Корзина">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </a>
+            <a href="account.html">
+                <button class="icon-btn" aria-label="Личный кабинет">
+                    <i class="far fa-user"></i>
+                </button>
+            </a>
+        </div>
+        
+        <a href="index.html" class="logo-center" style="display: block; text-align: center; text-decoration: none;">
+            <img src="assets/logo.png" alt="MORE DIRT" style="height: 90px;">
+        </a>
+        
+        <nav class="main-navigation" aria-label="Главное меню">
+            <ul class="nav-list">
+                <li>
+                    <a href="index.html">Каталог</a>
+                    <div class="dropdown-menu">
+                        <a href="catalog-clothing.html">Одежда</a>
+                        <a href="#accessories">Аксессуары</a>
+                        <a href="#tableware">Посуда</a>
+                        <a href="#collectible">Коллекционная</a>
+                        <a href="#home">Дом и офис</a>
+                    </div>
+                </li>
+                <li><a href="index.html#collections">Коллекции</a></li>
+                <li><a href="index.html#builds">Сборки</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="index.html#blog">Блог</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main class="cart-main">
+    <!-- ЛЕТУЧИЕ МЫШИ -->
+    <div class="background-bats">
+        <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-1">
+        <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-2">
+        <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-3">
+        <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-4">
+        <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-5">
+        <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-6">
+        <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-7">
+        <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-8">
+    </div>
+    
+    <div class="cart-page">
+        <div class="cart-container">
+            <div class="cart-header">
+                <h1>КОРЗИНА</h1>
+            </div>
+            
+            <div id="cart-content">
+            </div>
+            
+            <a href="index.html" class="cart-btn" style="display: inline-block; margin-top: 20px;">
+                На главную
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-moths">
+        <div class="moth moth-1"></div>
+        <div class="moth moth-2"></div>
+        <div class="moth moth-3 moth-right"></div>
+        <div class="moth moth-4 moth-right"></div>
+    </div>
+    <div class="footer-container">
+        <a href="index.html" class="footer-logo-link">
+            <div class="footer-logo-animated">
+                <div class="animated-icon">
+                    <img src="assets/logo.png" alt="logo" class="animated-logo-img">
+                    <div class="icon-pulse"></div>
+                </div>
+            </div>
+        </a>
+        
+        <div class="footer-info">
+            <div class="footer-column">
+                <h4>ИНФОРМАЦИЯ</h4>
+                <ul>
+                    <li><a href="#">Информация о доставке</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Политика возврата средств</a></li>
+                    <li><a href="#">Условия предоставления услуг</a></li>
+                    <li><a href="#">Таблица размеров</a></li>
+                    <li><a href="#">Сертификаты подлинности</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>СВЯЖИТЕСЬ С НАМИ</h4>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> krohmal.olya@mail.ru</li>
+                    <li><i class="fas fa-phone-alt"></i> +7(000)-000-00-00</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>СОЦИАЛЬНЫЕ СЕТИ</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© MORE DIRT — официально лицензированный бренд. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+    function renderCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const container = document.getElementById('cart-content');
+        
+        if (cart.length === 0) {
+            container.innerHTML = `
+                <h2 class="cart-empty-title">Ваша корзина сейчас пуста</h2>
+                <p class="cart-empty-text">Ознакомьтесь с нашим ассортиментом:</p>
+                <div class="cart-suggestions">
+                    <div class="suggestions-links">
+                        <a href="index.html#products">Продукты</a>
+                        <a href="index.html#collections">Коллекции</a>
+                        <a href="index.html#builds">Сборки</a>
+                        <a href="about.html">О нас</a>
+                        <a href="index.html#blog">Блог</a>
+                    </div>
+                </div>
+            `;
+            return;
+        }
+        
+        let itemsHtml = '<div class="cart-items-list">';
+        let total = 0;
+        
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            
+            itemsHtml += `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-artist">От художника ${item.artist}</div>
+                    </div>
+                    <div class="cart-item-price">${item.price.toLocaleString()} ₽</div>
+                    <div class="cart-item-quantity">
+                        <button onclick="changeQuantity(${index}, -1)">−</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="changeQuantity(${index}, 1)">+</button>
+                    </div>
+                    <div class="cart-item-total">${itemTotal.toLocaleString()} ₽</div>
+                    <button class="cart-item-remove" onclick="removeItem(${index})">🗑</button>
+                </div>
+            `;
+        });
+        
+        itemsHtml += '</div>';
+        itemsHtml += `<div class="cart-total-block">Итого: ${total.toLocaleString()} ₽</div>`;
+        
+        container.innerHTML = itemsHtml;
+    }
+    
+    function changeQuantity(index, delta) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        if (!cart[index]) return;
+        
+        cart[index].quantity += delta;
+        if (cart[index].quantity < 1) {
+            cart.splice(index, 1);
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+    
+    function removeItem(index) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+    
+    document.addEventListener('DOMContentLoaded', renderCart);
+    function goBack() {
+    
+    if (document.referrer !== '' || window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = 'index.html';
+    }
+}
+</script>
+</body>
+</html>

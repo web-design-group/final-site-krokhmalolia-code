@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас — MORE DIRT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylee.css">
+</head>
+<body>
+
+<header>
+    <div class="header-moths">
+        <div class="moth moth-1"></div>
+        <div class="moth moth-2"></div>
+        <div class="moth moth-3 moth-right"></div>
+        <div class="moth moth-4 moth-right"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header-actions-left">
+             <button class="back-btn" onclick="goBack()">
+    <i class="fas fa-arrow-left"></i>
+</button>
+            <div class="search-wrapper">
+                <input type="text" class="search-input" placeholder="Поиск...">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            <a href="cart.html" class="cart-link">
+                <button class="icon-btn" aria-label="Корзина">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </a>
+            <a href="account.html">
+                <button class="icon-btn" aria-label="Личный кабинет"><i class="far fa-user"></i></button>
+            </a>
+        </div>
+        
+        <a href="index.html" class="logo-center" style="display: block; text-align: center; text-decoration: none;">
+            <img src="assets/logo.png" alt="MORE DIRT" style="height: 90px;">
+        </a>
+        
+        <nav class="main-navigation" aria-label="Главное меню">
+            <ul class="nav-list">
+                <li>
+                    <a href="index.html">Каталог</a>
+                    <div class="dropdown-menu">
+                        <a href="catalog-clothing.html">Одежда</a>
+                        <a href="#accessories">Аксессуары</a>
+                        <a href="#tableware">Посуда</a>
+                        <a href="#collectible">Коллекционная</a>
+                        <a href="#home">Дом и офис</a>
+                    </div>
+                </li>
+                <li><a href="#collections">Коллекции</a></li>
+                <li><a href="#builds">Сборки</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="#blog">Блог</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container about-page">
+        <div class="about-block">
+            <h2 class="faq-title" style="margin-bottom: 20px;">О НАС</h2>
+            <p>Добро пожаловать в <a href="index.html" class="about-link">MORE DIRT</a> — место, где страхи становятся вещами. Мы создаём редкие и необычные предметы, вдохновлённые настоящей тьмой, забытыми местами и историями, которые передают шёпотом.</p>
+            <p>Мы верим, что ужас живёт в деталях: в скрипе пола, в пятне на стене, в тишине перед бурей. Наш маркет — способ унести кусочек этой подлинной, не приукрашенной атмосферы с собой. Каждая вещь здесь сделана, чтобы тревожить душу и бередить память.</p>
+            <p>Мы работаем с <a href="blog.html" class="about-link">художниками</a>  из глубин, выпускаем небольшие партии, вдохновлённые городскими легендами и личными кошмарами. Это не массовый товар — это находки с характером и историей, которые вы не найдёте больше нигде.</p>
+            <p>Здесь собираются те, кто ценит не крик, а тягучую тревогу, кто ищет не образ, а ощущение. Вне зависимости от того, чем пугаетесь вы — будь то космическая бесконечность, славянская нечисть или тихий ужас обыденности, — вы отыщете здесь свой личный оберег от спокойствия.</p>
+            <p>Загляните в нашу кладовую и начните поиск. <br>Но помните: <br>самые цепляющие вещи появляются редко и ненадолго. Следите, пока они не растворились в тени.</p>
+             </div>
+        <!-- Заголовок FAQ -->
+        <h2 class="faq-title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
+
+        <!-- Аккордеон FAQ -->
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    Существует ли физический магазин MORE DIRT?
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, наш склеп-шоурум находится в сердце старого города. Адрес открывается по тёмному приглашению. Следите за ритуалами в соцсетях.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Когда открылся магазин MORE DIRT?
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Мы начали путь в 2021 году как онлайн-проект, а в 2023 открыли первый концептуальный уголок. С тех пор тьма обрела форму.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Продаёт ли магазин официальную продукцию MORE DIRT?
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, вся продукция оригинальна, мы сотрудничаем с художниками из глубин и выпускаем лимитированные партии, вдохновлённые городскими легендами.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кнопка "На главную" -->
+        <div class="about-btn-wrapper">
+            <a href="index.html" class="about-btn">На главную</a>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-moths">
+        <div class="moth moth-1"></div>
+        <div class="moth moth-2"></div>
+        <div class="moth moth-3 moth-right"></div>
+        <div class="moth moth-4 moth-right"></div>
+    </div>
+    <div class="footer-container">
+        <a href="index.html" class="footer-logo-link">
+            <div class="footer-logo-animated">
+                <div class="animated-icon">
+                    <img src="assets/logo.png" alt="logo" class="animated-logo-img">
+                    <div class="icon-pulse"></div>
+                </div>
+            </div>
+        </a>
+        
+        <div class="footer-info">
+            <div class="footer-column">
+                <h4>ИНФОРМАЦИЯ</h4>
+                <ul>
+                    <li><a href="#">Информация о доставке</a></li>
+                    <li><a href="#">Политика конфиденциальности</a></li>
+                    <li><a href="#">Политика возврата средств</a></li>
+                    <li><a href="#">Условия предоставления услуг</a></li>
+                    <li><a href="#">Таблица размеров</a></li>
+                    <li><a href="#">Сертификаты подлинности</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>СВЯЖИТЕСЬ С НАМИ</h4>
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> krohmal.olya@mail.ru</li>
+                    <li><i class="fas fa-phone-alt"></i> +7(000)-000-00-00</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>СОЦИАЛЬНЫЕ СЕТИ</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© MORE DIRT — официально лицензированный бренд. Все права защищены.</p>
+    </div>
+</footer>
+
+<script>
+    // Аккордеон для FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        const icon = question.querySelector('i');
+        
+        question.addEventListener('click', () => {
+            // Закрываем все остальные
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    const otherAnswer = otherItem.querySelector('.faq-answer');
+                    const otherIcon = otherItem.querySelector('.faq-question i');
+                    otherAnswer.style.maxHeight = null;
+                    otherIcon.classList.remove('fa-minus');
+                    otherIcon.classList.add('fa-plus');
+                }
+            });
+            
+            // Открываем/закрываем текущий
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            }
+        });
+    });
+    // Плавное появление текста при скролле
+const paragraphs = document.querySelectorAll('.about-block p');
+
+function checkVisibility() {
+    const windowHeight = window.innerHeight;
+    
+    paragraphs.forEach((p, index) => {
+        const rect = p.getBoundingClientRect();
+        
+        if (rect.top < windowHeight - 100 && !p.classList.contains('visible')) {
+            setTimeout(() => {
+                p.classList.add('visible');
+            }, index * 400);
+        }
+    });
+}
+
+window.addEventListener('load', checkVisibility);
+window.addEventListener('scroll', checkVisibility);
+function goBack() {
+    
+    if (document.referrer !== '' || window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = 'index.html';
+    }
+}
+</script>
+</body>
+</html>
