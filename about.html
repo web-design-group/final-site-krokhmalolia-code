@@ -71,10 +71,8 @@
             <p>Здесь собираются те, кто ценит не крик, а тягучую тревогу, кто ищет не образ, а ощущение. Вне зависимости от того, чем пугаетесь вы — будь то космическая бесконечность, славянская нечисть или тихий ужас обыденности, — вы отыщете здесь свой личный оберег от спокойствия.</p>
             <p>Загляните в нашу кладовую и начните поиск. <br>Но помните: <br>самые цепляющие вещи появляются редко и ненадолго. Следите, пока они не растворились в тени.</p>
              </div>
-        <!-- Заголовок FAQ -->
+       
         <h2 class="faq-title">ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ</h2>
-
-        <!-- Аккордеон FAQ -->
         <div class="faq-list">
             <div class="faq-item">
                 <div class="faq-question">
@@ -107,7 +105,6 @@
             </div>
         </div>
 
-        <!-- Кнопка "На главную" -->
         <div class="about-btn-wrapper">
             <a href="index.html" class="about-btn">На главную</a>
         </div>
@@ -167,7 +164,6 @@
 </footer>
 
 <script>
-    // Аккордеон для FAQ
     const faqItems = document.querySelectorAll('.faq-item');
     
     faqItems.forEach(item => {
@@ -176,7 +172,6 @@
         const icon = question.querySelector('i');
         
         question.addEventListener('click', () => {
-            // Закрываем все остальные
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
                     const otherAnswer = otherItem.querySelector('.faq-answer');
@@ -186,8 +181,7 @@
                     otherIcon.classList.add('fa-plus');
                 }
             });
-            
-            // Открываем/закрываем текущий
+
             if (answer.style.maxHeight) {
                 answer.style.maxHeight = null;
                 icon.classList.remove('fa-minus');
@@ -199,7 +193,7 @@
             }
         });
     });
-    // Плавное появление текста при скролле
+
 const paragraphs = document.querySelectorAll('.about-block p');
 
 function checkVisibility() {
