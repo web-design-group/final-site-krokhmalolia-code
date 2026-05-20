@@ -63,7 +63,6 @@
 </header>
 
 <main class="account-main">
-    <!-- ЛЕТУЧИЕ МЫШИ -->
     <div class="background-bats">
         <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-1">
         <img src="assets/mouse.png" alt="bat" class="bg-bat bg-bat-2">
@@ -102,8 +101,7 @@
                     <button type="reset" class="clear-btn">Очистить форму</button>
                 </div>
             </form>
-            
-            <!-- Форма регистрации -->
+         
             <form class="account-form hidden" id="register-form" action="/register" method="POST">
                 <div class="form-group">
                     <label>Имя</label>
@@ -190,7 +188,6 @@
 </footer>
 
 <script>
-    // ПЕРЕКЛЮЧЕНИЕ ВКЛАДОК
     const tabs = document.querySelectorAll('.account-tab');
     const loginForm = document.getElementById('login-form');
     const registerForm = document.getElementById('register-form');
@@ -210,7 +207,6 @@
         });
     });
     
-    // ПРОБНАЯ ОБРАБОТКА ФОРМ
     document.querySelectorAll('.account-btn').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
