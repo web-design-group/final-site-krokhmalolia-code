@@ -6,275 +6,6 @@
     <title>Каталог — MORE DIRT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="stylee.css">
-    <style>
-        .catalog-page {
-            padding: 40px 0 60px;
-        }
-        
-        .breadcrumb {
-            font-size: 13px;
-            color: var(--muted);
-            margin-bottom: 30px;
-        }
-        
-        .breadcrumb a {
-            color: var(--muted);
-            text-decoration: none;
-        }
-        
-        .breadcrumb a:hover {
-            color: var(--accent);
-        }
-        
-        .breadcrumb span {
-            color: var(--accent);
-        }
-        
-        .filters-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 25px;
-        }
-        
-        .filter-group {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background: rgba(45, 20, 55, 0.6);
-            border: 1px solid var(--border);
-            padding: 8px 20px;
-            border-radius: 30px;
-            color: var(--muted);
-            font-size: 13px;
-            font-family: 'Bahnschrift', sans-serif;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            transform: translateY(-2px);
-        }
-        
-        .filter-btn.active {
-            background: var(--accent);
-            color: #1f102a;
-            border-color: var(--accent);
-        }
-        
-        .right-block {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .product-count {
-            font-size: 14px;
-            color: var(--muted);
-            font-family: 'Bahnschrift', sans-serif;
-        }
-        
-        /* ВЫПАДАЮЩИЙ СПИСОК С АНИМАЦИЕЙ */
-        .sort-wrapper {
-            position: relative;
-        }
-        
-        .sort-trigger {
-            background: rgba(45, 20, 55, 0.6);
-            border: 1px solid var(--border);
-            padding: 8px 20px;
-            border-radius: 30px;
-            color: var(--muted);
-            font-size: 13px;
-            font-family: 'Bahnschrift', sans-serif;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .sort-trigger:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-        
-        .sort-trigger i {
-            font-size: 12px;
-            transition: transform 0.3s ease;
-        }
-        
-        .sort-trigger.active i {
-            transform: rotate(180deg);
-        }
-        
-        .sort-dropdown {
-            position: absolute;
-            top: calc(100% + 10px);
-            right: 0;
-            background: linear-gradient(135deg, #1a1022, #120b18);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 8px 0;
-            min-width: 180px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 100;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .sort-wrapper:hover .sort-dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .sort-dropdown div {
-            padding: 10px 20px;
-            color: var(--muted);
-            font-size: 13px;
-            font-family: 'Bahnschrift', sans-serif;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .sort-dropdown div:hover {
-            background: rgba(184, 124, 158, 0.15);
-            color: var(--accent);
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-        
-        .product-card {
-            background: linear-gradient(145deg, #1a1022, #120b18);
-            border-radius: 24px 8px 24px 8px;
-            overflow: hidden;
-            transition: all 0.35s ease;
-            border: 1px solid #452b55;
-            text-align: center;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            border-color: #aa78c7;
-            box-shadow: var(--shadow);
-        }
-        
-        .product-img {
-            background: #20182b;
-            width: 100%;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: #b280cf;
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-card h3 {
-            margin: 0 0 8px 0;
-            font-size: 16px;
-            font-weight: 700;
-            color: #eeddff;
-            font-family: 'DAmiens', 'Cormorant Garamond', serif;
-        }
-        
-        .product-type {
-            font-size: 12px;
-            color: #b392c4;
-            margin-bottom: 8px;
-        }
-        
-        .product-price {
-            font-size: 18px;
-            font-weight: 600;
-            color: #dbb8ff;
-            margin: 10px 0;
-        }
-        
-        .product-link {
-            display: inline-block;
-            margin-top: 5px;
-            color: #dbb8ff;
-            text-decoration: none;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.2s;
-            border-bottom: 1px solid #735a8a;
-            padding-bottom: 4px;
-        }
-        
-        .product-link:hover {
-            color: #f0d0ff;
-            border-bottom-color: #c594ef;
-        }
-        
-        .pagination {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-        }
-        
-        .page-btn {
-            background: rgba(45, 20, 55, 0.6);
-            border: 1px solid var(--border);
-            padding: 8px 15px;
-            border-radius: 8px;
-            color: var(--muted);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .page-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-        
-        .page-btn.active {
-            background: var(--accent);
-            color: #1f102a;
-        }
-        
-        @media (max-width: 1100px) {
-            .products-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        
-        @media (max-width: 800px) {
-            .products-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        
-        @media (max-width: 700px) {
-            .filters-row { flex-direction: column; align-items: flex-start; }
-            .right-block { flex-wrap: wrap; }
-        }
-        
-        @media (max-width: 500px) {
-            .products-grid { grid-template-columns: 1fr; }
-        }
-    </style>
 </head>
 <body>
 
@@ -502,7 +233,7 @@
     });
 }
     
-   // ФИЛЬТРЫ ПО ТИПУ
+  
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -512,27 +243,25 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
 });
 
-// ОТКРЫТИЕ/ЗАКРЫТИЕ ВЫПАДАЮЩЕГО МЕНЮ
+
 document.querySelector('.sort-trigger').addEventListener('click', function(e) {
     e.stopPropagation();
     document.querySelector('.sort-wrapper').classList.toggle('active');
 });
 
-// ЗАКРЫТИЕ ПРИ КЛИКЕ ВНЕ МЕНЮ
+
 document.addEventListener('click', function(e) {
     if (!e.target.closest('.sort-wrapper')) {
         document.querySelector('.sort-wrapper')?.classList.remove('active');
     }
 });
 
-// ВЫПАДАЮЩАЯ СОРТИРОВКА
+
 document.querySelectorAll('.sort-dropdown div').forEach(item => {
     item.addEventListener('click', function() {
         currentSort = this.dataset.sort;
-        // Кнопка всегда показывает "Сортировать по"
         document.querySelector('.sort-trigger').innerHTML = `Сортировать по <i class="fas fa-chevron-down"></i>`;
         applyFiltersAndSort();
-        // Закрыть меню после выбора
         document.querySelector('.sort-wrapper').classList.remove('active');
     });
 });
